@@ -1,0 +1,614 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jeremyscalpello/chip-gpio#readme"
+
+    >chip-gpio (v1.1.2)</a>
+</h1>
+<h4>GPIO access for CHIP and Node.JS</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.chip-gpio">module chip-gpio</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio">
+            function <span class="apidocSignatureSpan">chip-gpio.</span>Gpio
+            <span class="apidocSignatureSpan">(gpio, direction, edge, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">chip-gpio.</span>Gpio.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.chip-gpio.Gpio">module chip-gpio.Gpio</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.Gpio">
+            function <span class="apidocSignatureSpan">chip-gpio.</span>Gpio
+            <span class="apidocSignatureSpan">(gpio, direction, edge, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.chip-gpio.Gpio.prototype">module chip-gpio.Gpio.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.direction">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>direction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.edge">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>edge
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.read">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.setDirection">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>setDirection
+            <span class="apidocSignatureSpan">(direction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.setEdge">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>setEdge
+            <span class="apidocSignatureSpan">(edge)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.unexport">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>unexport
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.unwatch">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>unwatch
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.watch">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>watch
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.chip-gpio.Gpio.prototype.write">
+            function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>write
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.chip-gpio" id="apidoc.module.chip-gpio">module chip-gpio</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio" id="apidoc.element.chip-gpio.Gpio">
+        function <span class="apidocSignatureSpan">chip-gpio.</span>Gpio
+        <span class="apidocSignatureSpan">(gpio, direction, edge, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Gpio(gpio, direction, edge, options) {
+	var valuePath;
+	var directionSet = false;
+	var tries = 0;
+
+	if (!(this instanceof Gpio)) {
+		return new Gpio(gpio, direction, edge, options);
+	}
+
+	if (typeof edge === &#x27;object&#x27; &#x26;&#x26; !options) {
+		options = edge;
+		edge = undefined;
+	}
+
+	options = options || {};
+
+        //
+        // MenloParkInnovcation: If the port specified is greater than the MAPPING
+        // maximum, take it as a direct map.
+        //
+        // This is to allow access to all C.H.I.P. ports.
+        //
+
+	if (gpio == null) {
+		throw new Error(&#x27;Invalid GPIO Pin&#x27;)
+	}
+
+        if (gpio &#x3e; MAPPING.length) {
+            this.gpio = gpio;
+        }
+        else {
+            this.gpio = MAPPING[gpio];
+        }
+
+	this.gpioPath = GPIO_ROOT + &#x27;gpio&#x27; + this.gpio + &#x27;/&#x27;;
+	this.opts = {};
+	this.opts.debounceTimeout = options.debounceTimeout || 0;
+	this.listeners = [];
+	this.readBuffer = new Buffer(16);
+	valuePath = this.gpioPath + &#x27;value&#x27;;
+
+	if (!fs.existsSync(this.gpioPath)) {
+		fs.writeFileSync(GPIO_ROOT + &#x27;export&#x27;, this.gpio);
+		directionSet = false;
+		while (!directionSet) {
+			try {
+				tries += 1;
+				fs.writeFileSync(this.gpioPath + &#x27;direction&#x27;, direction);
+				directionSet = true;
+			} catch (e) {
+				if (tries === 10000) {
+					throw e;
+				}
+			}
+		}
+		if (edge) {
+			fs.writeFileSync(this.gpioPath + &#x27;edge&#x27;, edge);
+		}
+	} else {
+		try {
+			fs.writeFileSync(this.gpioPath + &#x27;direction&#x27;, direction);
+		} catch (ignore) {}
+		try {
+			if (edge) {
+				fs.writeFileSync(this.gpioPath + &#x27;edge&#x27;, edge);
+			}
+		} catch (ignore) {}
+	}
+
+	this.valueFd = fs.openSync(valuePath, &#x27;r+&#x27;); // Cache fd for performance.
+	this.read();
+	this.poller = new Epoll(pollerEventHandler.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.chip-gpio.Gpio" id="apidoc.module.chip-gpio.Gpio">module chip-gpio.Gpio</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.Gpio" id="apidoc.element.chip-gpio.Gpio.Gpio">
+        function <span class="apidocSignatureSpan">chip-gpio.</span>Gpio
+        <span class="apidocSignatureSpan">(gpio, direction, edge, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Gpio(gpio, direction, edge, options) {
+	var valuePath;
+	var directionSet = false;
+	var tries = 0;
+
+	if (!(this instanceof Gpio)) {
+		return new Gpio(gpio, direction, edge, options);
+	}
+
+	if (typeof edge === &#x27;object&#x27; &#x26;&#x26; !options) {
+		options = edge;
+		edge = undefined;
+	}
+
+	options = options || {};
+
+        //
+        // MenloParkInnovcation: If the port specified is greater than the MAPPING
+        // maximum, take it as a direct map.
+        //
+        // This is to allow access to all C.H.I.P. ports.
+        //
+
+	if (gpio == null) {
+		throw new Error(&#x27;Invalid GPIO Pin&#x27;)
+	}
+
+        if (gpio &#x3e; MAPPING.length) {
+            this.gpio = gpio;
+        }
+        else {
+            this.gpio = MAPPING[gpio];
+        }
+
+	this.gpioPath = GPIO_ROOT + &#x27;gpio&#x27; + this.gpio + &#x27;/&#x27;;
+	this.opts = {};
+	this.opts.debounceTimeout = options.debounceTimeout || 0;
+	this.listeners = [];
+	this.readBuffer = new Buffer(16);
+	valuePath = this.gpioPath + &#x27;value&#x27;;
+
+	if (!fs.existsSync(this.gpioPath)) {
+		fs.writeFileSync(GPIO_ROOT + &#x27;export&#x27;, this.gpio);
+		directionSet = false;
+		while (!directionSet) {
+			try {
+				tries += 1;
+				fs.writeFileSync(this.gpioPath + &#x27;direction&#x27;, direction);
+				directionSet = true;
+			} catch (e) {
+				if (tries === 10000) {
+					throw e;
+				}
+			}
+		}
+		if (edge) {
+			fs.writeFileSync(this.gpioPath + &#x27;edge&#x27;, edge);
+		}
+	} else {
+		try {
+			fs.writeFileSync(this.gpioPath + &#x27;direction&#x27;, direction);
+		} catch (ignore) {}
+		try {
+			if (edge) {
+				fs.writeFileSync(this.gpioPath + &#x27;edge&#x27;, edge);
+			}
+		} catch (ignore) {}
+	}
+
+	this.valueFd = fs.openSync(valuePath, &#x27;r+&#x27;); // Cache fd for performance.
+	this.read();
+	this.poller = new Epoll(pollerEventHandler.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.chip-gpio.Gpio.prototype" id="apidoc.module.chip-gpio.Gpio.prototype">module chip-gpio.Gpio.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.direction" id="apidoc.element.chip-gpio.Gpio.prototype.direction">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>direction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">direction = function () {
+	return fs.readFileSync(this.gpioPath + &#x27;direction&#x27;).toString().trim();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.edge" id="apidoc.element.chip-gpio.Gpio.prototype.edge">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>edge
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">edge = function () {
+	return fs.readFileSync(this.gpioPath + &#x27;edge&#x27;).toString().trim();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.read" id="apidoc.element.chip-gpio.Gpio.prototype.read">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function () {
+	fs.readSync(this.valueFd, this.readBuffer, 0, 1, 0);
+	var valString = fs.readFileSync(this.gpioPath + &#x27;value&#x27;, &#x27;utf8&#x27;);
+	return parseInt(valString.split(&#x27;\n&#x27;)[0]);
+	//return this.readBuffer[0] === new Buffer(&#x27;1&#x27;)[0] ? 1 : 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+var led = new Gpio(6, &#x27;out&#x27;);
+
+btn.watch(function (err, value) {
+	if (err) {
+		throw err;
+	}
+	led.write(led.<span class="apidocCodeKeywordSpan">read</span>() == 1 ? 0 : 1);
+});
+
+function exit() {
+	btn.unexport();
+	led.unexport();
+	process.exit();
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.setDirection" id="apidoc.element.chip-gpio.Gpio.prototype.setDirection">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>setDirection
+        <span class="apidocSignatureSpan">(direction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDirection = function (direction) {
+	fs.writeFileSync(this.gpioPath + &#x27;direction&#x27;, direction);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.setEdge" id="apidoc.element.chip-gpio.Gpio.prototype.setEdge">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>setEdge
+        <span class="apidocSignatureSpan">(edge)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setEdge = function (edge) {
+	fs.writeFileSync(this.gpioPath + &#x27;edge&#x27;, edge);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.unexport" id="apidoc.element.chip-gpio.Gpio.prototype.unexport">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>unexport
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unexport = function () {
+	this.unwatch();
+	fs.closeSync(this.valueFd);
+	fs.writeFileSync(GPIO_ROOT + &#x27;unexport&#x27;, this.gpio);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	if (err) {
+		throw err;
+	}
+	led.write(led.read() == 1 ? 0 : 1);
+});
+
+function exit() {
+	btn.<span class="apidocCodeKeywordSpan">unexport</span>();
+	led.unexport();
+	process.exit();
+}
+
+process.on(&#x27;SIGINT&#x27;, exit);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.unwatch" id="apidoc.element.chip-gpio.Gpio.prototype.unwatch">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>unwatch
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unwatch = function (callback) {
+	if (this.listeners.length &#x3e; 0) {
+		if (typeof callback !== &#x27;function&#x27;) {
+			this.listeners = [];
+		} else {
+			this.listeners = this.listeners.filter(function (listener) {
+				return callback !== listener;
+			});
+		}
+		if (this.listeners.length === 0) {
+			this.poller.remove(this.valueFd);
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	if (value != 0 &#x26;&#x26; value != 1) {
+		throw new Error(&#x27;Invalid Value&#x27;)
+	}
+	return fs.writeFileSync(this.gpioPath + &#x27;value&#x27;, value);
+};
+
+Gpio.prototype.unexport = function () {
+	this.<span class="apidocCodeKeywordSpan">unwatch</span>();
+	fs.closeSync(this.valueFd);
+	fs.writeFileSync(GPIO_ROOT + &#x27;unexport&#x27;, this.gpio);
+};
+
+Gpio.prototype.watch = function (callback) {
+	var events;
+	this.listeners.push(callback);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.watch" id="apidoc.element.chip-gpio.Gpio.prototype.watch">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>watch
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watch = function (callback) {
+	var events;
+	this.listeners.push(callback);
+	if (this.listeners.length === 1) {
+		events = Epoll.EPOLLPRI;
+		if (this.opts.debounceTimeout &#x3e; 0) {
+			events |= Epoll.EPOLLONESHOT;
+		}
+		this.poller.add(this.valueFd, events);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var Gpio = require(&#x27;chip-gpio&#x27;).Gpio;
+var btn = new Gpio(7, &#x27;in&#x27;, &#x27;both&#x27;, {
+	debounceTimeout: 500
+});
+var led = new Gpio(6, &#x27;out&#x27;);
+
+btn.<span class="apidocCodeKeywordSpan">watch</span>(function (err, value) {
+	if (err) {
+		throw err;
+	}
+	led.write(led.read() == 1 ? 0 : 1);
+});
+
+function exit() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.chip-gpio.Gpio.prototype.write" id="apidoc.element.chip-gpio.Gpio.prototype.write">
+        function <span class="apidocSignatureSpan">chip-gpio.Gpio.prototype.</span>write
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (value) {
+	if (value != 0 &#x26;&#x26; value != 1) {
+		throw new Error(&#x27;Invalid Value&#x27;)
+	}
+	return fs.writeFileSync(this.gpioPath + &#x27;value&#x27;, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+var led = new Gpio(6, &#x27;out&#x27;);
+
+btn.watch(function (err, value) {
+	if (err) {
+		throw err;
+	}
+	led.<span class="apidocCodeKeywordSpan">write</span>(led.read() == 1 ? 0 : 1);
+});
+
+function exit() {
+	btn.unexport();
+	led.unexport();
+	process.exit();
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
